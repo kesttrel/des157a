@@ -28,16 +28,32 @@ h1 {
     position: relative;
 }
 /* I am attempting to make the cricket wiggle like the hover animation does in CSS Animation Challenge 4. Wihout the hover psuedo class, I am not sure how to make this work with no interaction. I know I need to define time/duration but I am not sure how to approach this yet*/
-h1 img {
-    animation: cricketWiggle 3s infinite;
+h1 img, #left {
+    padding: 0 10px 0 0;
+    animation: cricketWiggleLeft 4s infinite;
 }
-@keyframes cricketWiggle {
+@keyframes cricketWiggleLeft {
     0%{rotate: 0deg;}
-   15%{rotate: 15deg;}
-   20%{rotate:-15deg;}
+    40%{rotate: 15deg;}
+    80%{rotate:-5deg;}
+    100%{rotate: 0deg;}
+   /*30%{rotate: 5deg;}
+   35%{rotate: -5deg;}
+   40%{rotate: 0deg;} */
+}
+h1 img, #right {
+    padding: 0 0 0 10px;
+    animation: cricketWiggleRight 4s infinite;
+}
+@keyframes cricketWiggleRight {
+    0%{rotate: 0deg;}
+    40%{rotate: -15deg;}
+    80%{rotate: 5deg;}
+    100%{rotate: 0deg;}
+   /* 20%{rotate:-15deg;}
    30%{rotate: 5deg;}
    35%{rotate: -5deg;}
-   40%{rotate: 0deg;}
+   40%{rotate: 0deg;} */
 }
 h2 {
     font-size: 25px;
@@ -99,6 +115,8 @@ main div {
     transform: rotateY(0deg);
 }
 .back, .front {
+    width: 220px;
+    height: 320px;
     backface-visibility: hidden; 
     transition: 1.5s;
     position: absolute;
@@ -107,16 +125,12 @@ main div {
     border-radius: 5px;
 }
 .back {
-    width: 220px;
-    height: 320px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transform: rotateY(0deg);
     color: black;
     background-size: 220px 320px;
 }
 .front {
-    width: 220px;
-    height: 320px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transform: rotateY(-180deg);
@@ -124,24 +138,14 @@ main div {
 
 #multe {
     background-image: url(images/multe.jpg); 
-    width: 220px;
-    height: 320px;
-    /* Height and Width are not applying to the background-image.
-    These images are 550x800px (saving them at the desired 220x320px reduces the image quality) */
 }
 
 #fisker {
     background-image: url(images/fisker.jpg);
-    width: 220px;
-    height: 320px;
-    /* Height and Width are not applying to the background-image.
-    These images are 550x800px (saving them at the desired 220x320px reduces the image quality) */
 }
 
 #triangles {
     background-image: url(images/triangles.jpg);
-    width: 220px;
-    height: 320px;
 }
 
 footer {
@@ -150,7 +154,7 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     margin: auto;
-    margin-top: 24px;
+    margin-top: 40px;
 }
 footer address {
     margin: 10px;
