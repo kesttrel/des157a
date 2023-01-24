@@ -81,15 +81,17 @@ li a {
     font-weight: 200;
     font-size: 18px;
     margin: 5px 0 0 20px;
-    padding: 5px 10px;
+    padding: 3px 10px;
     line-height: 2em;
     color: #2D2B2A;
+    border:  1px solid#2d2b2a00;
     border-radius: 5px;
     transition: all .5s ease-in-out;
 }
 li a:hover {
-    background-color: #2D2B2A;
-    color: white;
+    color: #2D2B2A;
+    background-color: white;
+    border:  1px solid#2D2B2A;
 }
 main {
     box-sizing: border-box;
@@ -164,16 +166,17 @@ footer address a {
     width: fit-content;
     margin: auto;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 8px 10px;
     color: white;
     background-color: #2D2B2A;
-    border:  1px solid#2d2b2a00;text-decoration: none;
+    border:  1px solid#2d2b2a00;
     border-radius: 5px;
     transition: all .5s ease-in-out;
+    text-decoration: none;
 }
 footer address a:hover {
     box-sizing: border-box;
-    border:  1px solid#2D2B2A;
     color: #2D2B2A;
     background-color: white;
+    border:  1px solid#2D2B2A;
 }
