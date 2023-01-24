@@ -29,7 +29,7 @@ h1 {
 }
 /* I am attempting to make the cricket wiggle like the hover animation does in CSS Animation Challenge 4. Wihout the hover psuedo class, I am not sure how to make this work with no interaction. I know I need to define time/duration but I am not sure how to approach this yet*/
 h1 img {
-    animation: cricketWiggle 1s infinite;
+    animation: cricketWiggle 3s infinite;
 }
 @keyframes cricketWiggle {
     0%{rotate: 0deg;}
