@@ -1,0 +1,175 @@
+#wrapper {
+    max-width: 1200px;
+    min-width: 800px;
+    /* height: 100vh; */
+    margin: auto;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+#banner {
+    width: 1200px;
+    /* height: 150px; */
+    box-sizing: border-box;
+    /* margin: 40px 0px; */
+    /* position: absolute; */
+}
+h1, h2, h3, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-family: 'Italiana', serif;
+    font-size: 65px;
+    text-align: center;
+    padding: 40px 0px 10px;
+    color: #2D2B2A;
+    position: relative;
+}
+/* I am attempting to make the cricket wiggle like the hover animation does in CSS Animation Challenge 4. Wihout the hover psuedo class, I am not sure how to make this work with no interaction. I know I need to define time/duration but I am not sure how to approach this yet*/
+h1 img {
+    animation: cricketWiggle 1s infinite;
+}
+@keyframes cricketWiggle {
+    0%{rotate: 0deg;}
+   15%{rotate: 15deg;}
+   20%{rotate:-15deg;}
+   30%{rotate: 5deg;}
+   35%{rotate: -5deg;}
+   40%{rotate: 0deg;}
+}
+h2 {
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 15px;
+    width: fit-content;
+    margin: auto;
+    color: #2D2B2A;
+    border-radius: 5px;
+    background-color: white;
+}
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    padding: 10px 0 0 15px;
+    color: #2D2B2A;
+}
+ul {
+    list-style-type: none;
+}
+li a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    margin: 5px 0 0 20px;
+    padding: 5px 10px;
+    line-height: 2em;
+    color: #2D2B2A;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+li a:hover {
+    background-color: #2D2B2A;
+    color: white;
+}
+main {
+    box-sizing: border-box;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+main div {
+    flex:1;
+    margin: 20px 0;
+}
+
+.card {
+    position: relative;
+    height: 320px;
+}
+.card:hover .back {
+    transform: rotateY(180deg);
+}
+.card:hover .front {
+    transform: rotateY(0deg);
+}
+.back, .front {
+    backface-visibility: hidden; 
+    transition: 1.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+}
+.back {
+    width: 220px;
+    height: 320px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: rotateY(0deg);
+    color: black;
+    background-size: 220px 320px;
+}
+.front {
+    width: 220px;
+    height: 320px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: rotateY(-180deg);
+}
+
+#multe {
+    background-image: url(images/multe.jpg); 
+    width: 220px;
+    height: 320px;
+    /* Height and Width are not applying to the background-image.
+    These images are 550x800px (saving them at the desired 220x320px reduces the image quality) */
+}
+
+#fisker {
+    background-image: url(images/fisker.jpg);
+    width: 220px;
+    height: 320px;
+    /* Height and Width are not applying to the background-image.
+    These images are 550x800px (saving them at the desired 220x320px reduces the image quality) */
+}
+
+#triangles {
+    background-image: url(images/triangles.jpg);
+    width: 220px;
+    height: 320px;
+}
+
+footer {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: auto;
+    margin-top: 24px;
+}
+footer address {
+    margin: 10px;
+}
+footer address a { 
+    display: block;
+    width: fit-content;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    color: white;
+    background-color: #2D2B2A;
+    border:  1px solid#2d2b2a00;text-decoration: none;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+footer address a:hover {
+    box-sizing: border-box;
+    border:  1px solid#2D2B2A;
+    color: #2D2B2A;
+    background-color: white;
+}
