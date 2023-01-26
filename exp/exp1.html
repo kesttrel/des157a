@@ -8,34 +8,49 @@
 </head>
 <body>
     <h1>Experiment 1</h1>
-    <h2>Double lick and select "inspector" from the pop up menu. Click on "Console" located in the first row at the top of the inspector panel – if you do not see it, click on the >> icon.</h2>
+    <h2><em>command option j</em> to open the inspector panel.</h2>
     
     <script>
 
+        // var character = '#';
 
+        // for( i=0; i=7; i++) {
+        //     console.log('character');
+        //     character += '#';
+        // }
+
+        
 
         var month = prompt("What month were you born in?", "").toLowerCase();
 
         if( month === 'december' || month === 'january' || month === 'february') {
             console.log('You were born in Winter');
-            for(var i = 0; i = month; i++){
-                if( i == month ) {
-                    console.log(`Here is the month ${i} <--- this is the month you were born in`);
+            for(var i = 0; i<3; i++){
+                var numMonth;
+                if(month==='december'){
+                    numMonth=0;
+                } else if (month==='january'){
+                    numMonth=1;
+                } else {
+                    numMonth=2;
+                }
+                if( i == numMonth ) {
+                    console.log(`Here is the month ${month} <--- this is the month you were born in`);
                 }
             }
         } 
-        else if( month === 'march' || month === 'april' || month === 'may' ){
-            console.log('You were born in Spring');
-        }
-        else if(month === 'june' || month === 'july' || month === 'august') {
-            console.log('You were born in Summer');
-        }
-        else if( month === 'september' || month === 'october' || month === 'november'){
-            console.log('You were born in Fall');
-        }
-        else {
-            console.log('You did not enter a month or spell your birthmonth correctly. Please try again.')
-        }
+        // else if( month === 'march' || month === 'april' || month === 'may' ){
+        //     console.log('You were born in Spring');
+        // }
+        // else if(month === 'june' || month === 'july' || month === 'august') {
+        //     console.log('You were born in Summer');
+        // }
+        // else if( month === 'september' || month === 'october' || month === 'november'){
+        //     console.log('You were born in Fall');
+        // }
+        // else {
+        //     console.log('You did not enter a month or spell your birthmonth correctly. Please try again.')
+        // }
 
     </script>
 </body>

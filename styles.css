@@ -33,27 +33,24 @@ h1 img, #left {
     animation: cricketWiggleLeft 4s infinite;
 }
 @keyframes cricketWiggleLeft {
-    0%{rotate: 0deg;}
-    40%{rotate: 15deg;}
-    80%{rotate:-5deg;}
-    100%{rotate: 0deg;}
-   /*30%{rotate: 5deg;}
-   35%{rotate: -5deg;}
-   40%{rotate: 0deg;} */
+    0%{transform: rotate(0deg);}
+    40%{transform: rotate(15deg);}
+    80%{transform: rotate(-5deg);}
+    100%{transform: rotate(0deg);}
 }
 h1 img, #right {
     padding: 0 0 0 10px;
     animation: cricketWiggleRight 4s infinite;
 }
 @keyframes cricketWiggleRight {
-    0%{rotate: 0deg;}
+    0%{transform: rotate(0deg);}
+    40%{transform: rotate(-15deg);}
+    80%{transform: rotate(5deg);}
+    100%{transform: rotate(0deg);}
+    /* 0%{rotate: 0deg;}
     40%{rotate: -15deg;}
     80%{rotate: 5deg;}
-    100%{rotate: 0deg;}
-   /* 20%{rotate:-15deg;}
-   30%{rotate: 5deg;}
-   35%{rotate: -5deg;}
-   40%{rotate: 0deg;} */
+    100%{rotate: 0deg;} */
 }
 h2 {
     font-size: 25px;
