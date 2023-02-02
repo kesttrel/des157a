@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <p></p>
+
+    <script>
+
+        var userMonth = prompt("What month were you born in?", "").toLowerCase();
+        // var month = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+        // var season = ['winter', 'spring', 'summer', 'fall'];
+        function getSeason(){
+            if ( userMonth ==='december' || userMonth ==='january' || userMonth ==='february') {
+                // document.querySelector('p').innerHTML='You were born in the winter';
+                var season = "winter";
+                return season;
+            }
+        }
+        function printSeason() {
+            document.querySelector('p').innerHTML=getSeason;
+        }
+        // console.log(getSeason());
+
+        // for( var i=0; i<month.length-1; i++) {
+        //     if ( userMonth === month[i]) {
+        //         console.log(`the userMonth is ${userMonth}; the month from the array is ${month[i]}`);
+        //         if ( month  )
+        //     }
+            // if( month === 'january' ) {
+            //     numMonth=1;
+            // } else if ( month === 'february' ) {
+            //     numMonth=2;
+            // } else if ( month === 'march' ) {
+            //     numMonth=3;
+            // } else if ( month === 'april' ) {
+            //     numMonth=4;
+            // } else if ( month === 'may' ) {
+            //     numMonth=5;
+            // } else if ( month === 'june' ) {
+            //     numMonth=6;
+            // } else if ( month === 'july' ) {
+            //     numMonth=7;
+            // } else if ( month === 'august' ) {
+            //     numMonth=8;
+            // } else if ( month === 'september' ) {
+            //     numMonth=9;
+            // } else if ( month === 'october' ) {
+            //     numMonth=10;
+            // } else if ( month === 'november' ) {
+            //     numMonth=11;
+            // } else if ( month === 'december' ) {
+            //     numMonth=12;
+            // }
+        // }
+        // if ( i === 12 || 1 || 2 ) {
+        //     document.getElementsByTagName('div').innerHTML = ('You were born in Winter');
+        // }
+
+    </script>
+</body>
+</html>
