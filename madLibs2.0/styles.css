@@ -11,7 +11,7 @@ h1 {
     position: absolute;
     top: 48%;
     left: -15%;
-    rotate: -90deg;
+    /* transition: rotate(-90deg); */
     font-size: 12vh;
     color: white;
 }
