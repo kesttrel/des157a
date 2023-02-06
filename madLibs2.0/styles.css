@@ -1,0 +1,75 @@
+h1, h2, p, img, button, .wrapper {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.6em;
+    background-color: #2e2e2e;
+    font-family: 'Source Code Pro', monospace;
+}
+h1 {
+    position: absolute;
+    top: 48%;
+    left: -15%;
+    rotate: -90deg;
+    font-size: 12vh;
+    color: white;
+}
+h2 {
+    font-size: 19px;
+    position: relative;
+    top: -50px;
+    right: -177px;
+}
+#front {
+    height: 90vh;
+    width: 90vh;
+    margin: auto;
+}
+#back {
+    height: 90vh;
+    width: 90vh;
+    margin: auto;
+}
+.wrapper {
+    height: max-content;
+    box-sizing: border-box;
+    border: solid black 6px;
+    border-style: none solid solid solid;
+    background-color: white;
+    font-size: 16px;
+}
+form {
+    margin: 20px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.topper {
+    display: block;
+    width: 90vh;
+}
+form {
+    position: relative;
+    top: -20px;
+}
+.inputLabel {
+    display: flex;
+    justify-content: space-between;
+}
+input {
+    width: 200px;
+    margin-bottom: 5px;
+}
+#filledIn {
+    margin: 20px;
+    margin-top: 0;
+}
+button {
+    width: 100px;
+    border: solid black 2px;
+    box-shadow: 2px 2px black;
+    background-color: white;
+}
