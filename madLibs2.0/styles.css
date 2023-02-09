@@ -3,7 +3,7 @@ h1, h2, p, img, button, .wrapper {
     padding: 0;
 } 
 body {
-    line-height: 1.6em;
+    line-height: 1.2em;
     background-color: #2e2e2e;
     font-family: 'Source Code Pro', monospace;
 }
@@ -25,11 +25,7 @@ h2 {
     display: block;
     width: 90vh;
 }
-#front {
-    width: 90vh;
-    margin: auto;
-}
-#back {
+#front, #back {
     width: 90vh;
     margin: auto;
 }
@@ -41,31 +37,36 @@ h2 {
     background-color: white;
     font-size: 16px;
 }
+form, article {
+    margin: 0 20px;
+}
 form {
-    margin: 20px;
-}
-
-ul li {
-    list-style-type: none;
-}
-
-
-form {
-    position: relative;
-    top: -20px;
-}
-.inputLabel {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
 }
-input {
+label {
+    font-weight: 700;
+    margin: 5px 0;
+}
+input[type="text"] {
+    font-weight: 300;
+    font-size: 14px;
+    width: 54%;
+}
+.inputItem {
+    margin: 5px;
+}
+input[type="submit"] {
     width: 200px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
     border: 2px solid black;
     outline: 0;
     margin-bottom: 5px;
 }
-input[type="text"]:focus {
-    border: 2px solid rgb(64, 72, 230);
-    outline: 0;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+input[type="submit"]:hover {
+    box-shadow: 4px 4px #000000;
 }

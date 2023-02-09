@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500;800&display=swap" rel="stylesheet">
 
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
@@ -18,7 +18,7 @@
 
 <body>
     <header>
-    <h1>Mad Libs 2.0</h1>
+    <!-- <h1>Mad Libs 2.0</h1> -->
     </header>
     <main> 
         <div id="front">
@@ -26,22 +26,57 @@
             <div class="wrapper">
                 <h2>Burning the Midnight Silicone</h2>
                 <form id="myForm">
-                    <label for="noun1">Noun</label>
-                    <input type="text" id="noun1">
+                    <div class="inputItem">
+                        <label for="noun1">Noun</label>
+                        <input type="text" id="noun1" placeholder="person, place, thing">
+                    </div>
+
+                    <div class="inputItem">
+                        <label for="emotion1">Emotion</label>
+                        <input type="text" id="emotion1" placeholder="be more specific than happy/sad/mad">
+                    </div>
+
+                    <div class="inputItem">
+                        <label for="pbod1">Part of Body Plural</label>
+                        <input type="text" id="pbod1" placeholder="elbows, kidneys, hairs, etc.">
+                    </div>
+
+                    <div class="inputItem">
+                        <label for="verb1">Verb</label>
+                        <input type="text" id="verb1" placeholder="doing/action word">
+                    </div>
+
+                    <div class="inputItem">
+                        <label for="adj1">Adjective</label>
+                        <input type="text" id="adj1" placeholder="descriptive word">
+                    </div>
+
+                    <div class="inputItem">
+                        <label for="pbod2">Part of Body Plural</label>
+                        <input type="text" id="pbod1" placeholder="elbows, kidneys, hairs, etc.">
+                    </div>
+
+                    <div class="inputItem">
+                        <label for="verb2">Verb</label>
+                        <input type="text" id="verb2" placeholder="doing/action word">
+                    </div>
+
+                    <div class="inputItem">
+                        <label for="verb3">Same Verb</label>
+                        <input type="text" id="verb3" placeholder="same verb you just typed above">
+                    </div>
+
+                    <div class="inputItem">
+                        <label for="adj2">Adjective ending in -ness</label>
+                        <input type="text" id="adj1" placeholder="stupidness, awesomeness, cleverness">
+                    </div>
+
+                    <div class="inputItem">
+                    <label for="adj3">Adjective</label>
+                    <input type="text" id="adj1" placeholder="descriptive word">
+                    </div>
     
-                    <label for="emotion1">Emotion</label>
-                    <input type="text" id="emotion1">
-    
-                    <label for="pbod1">Part of Body Plural</label>
-                    <input type="text" id="pbod1">
-    
-                    <label for="verb1">Verb</label>
-                    <input type="text" id="verb1">
-    
-                    <label for="adj1">Adjective</label>
-                    <input type="text" id="adj1">
-    
-                    <input type="submit" value="send">
+                    <input type="submit" value="Play">
                 </form>
             </div>
         </div>
@@ -54,7 +89,7 @@
                     <p>With so many coding _________ in DES 157A, it can be easy to become _________. You know that feeling, when you've been up all nigh coding until your _________ want to fall off. Me too, I've been there.</p>
                     <p>When you find yourself in that mental state, do yourself a favor and take a break. A good night's _________ is your best friend.</p>
                     <p>When you wake up, have another go at that _________ code error. 9/10 times, a fresh pair of _________ will help you _________ the code error with more clarity. When you _________ the code error, rejoice in your _________, and remember how _________ you feel right now the next time you get stuck.</p>
-                    <button>Play Again</button>
+                    <input type="submit" value="Play Again"></input>
                 </article>
             </div>
         </article>
