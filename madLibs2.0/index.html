@@ -17,81 +17,45 @@
 </head>
 
 <body>
+    <header>
     <h1>Mad Libs 2.0</h1>
-
-    <main>
-        <article id="front">
-            <!-- <div class="topper"></div> -->
+    </header>
+    <main> 
+        <div id="front">
             <img src="images/topper.svg" alt="mad-divs header" class="topper">
             <div class="wrapper">
-                <div id="frontPageWrapper"></div>
                 <h2>Burning the Midnight Silicone</h2>
-                <form action="#" method="#">
-                    <div class="inputLabel">
-                        <label for="pluralNoun">Plural Noun</label>
-                        <input type="text" id="pluralNoun" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="emotion">Emotion</label>
-                        <input type="text" id="emotion" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="bodPartPlural">Body Part Plural</label>
-                        <input type="text" id="bodPartPlural" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="verb">Verb</label>
-                        <input type="text" id="verb" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="adjective">Adjective</label>
-                        <input type="text" id="adjective" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="bodPartPlural">Body Part Plural</label>
-                        <input type="text" id="bodPartPlural" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="verb">Verb</label>
-                        <input type="text" id="verb" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="verb">Same Verb</label>
-                        <input type="text" id="verb" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="adjective">Adjective ending in -ness</label>
-                        <input type="text" id="adjective" placeholder="type here..." required>
-                    </div>
-
-                    <div class="inputLabel">
-                        <label for="adjective">Adjective</label>
-                        <input type="text" id="adjective" placeholder="type here..." required>
-                    </div>
-                <a href="#">Play</a>
+                <form id="myForm">
+                    <label for="noun1">Noun</label>
+                    <input type="text" id="noun1">
+    
+                    <label for="emotion1">Emotion</label>
+                    <input type="text" id="emotion1">
+    
+                    <label for="pbod1">Part of Body Plural</label>
+                    <input type="text" id="pbod1">
+    
+                    <label for="verb1">Verb</label>
+                    <input type="text" id="verb1">
+    
+                    <label for="adj1">Adjective</label>
+                    <input type="text" id="adj1">
+    
+                    <input type="submit" value="send">
                 </form>
-                
             </div>
-        </article>
-        <article id="back">
-            <!-- <div class="topper"></div> -->
+        </div>
+
+        <div id="back">
             <img src="images/topper.svg" alt="mad-divs header" class="topper">
             <div class="wrapper">
-                <div id="filledIn">
-                    <h2>Burning the Midnight Silicone</h2>
+                <h2>Burning the Midnight Silicone</h2>
+                <article id="madLib">
                     <p>With so many coding _________ in DES 157A, it can be easy to become _________. You know that feeling, when you've been up all nigh coding until your _________ want to fall off. Me too, I've been there.</p>
                     <p>When you find yourself in that mental state, do yourself a favor and take a break. A good night's _________ is your best friend.</p>
                     <p>When you wake up, have another go at that _________ code error. 9/10 times, a fresh pair of _________ will help you _________ the code error with more clarity. When you _________ the code error, rejoice in your _________, and remember how _________ you feel right now the next time you get stuck.</p>
-                    <a href="#">Play Again</a>
-                </div>
+                    <button>Play Again</button>
+                </article>
             </div>
         </article>
     </main>

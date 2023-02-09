@@ -1,7 +1,7 @@
 h1, h2, p, img, button, .wrapper {
     margin: 0;
     padding: 0;
-}
+} 
 body {
     line-height: 1.6em;
     background-color: #2e2e2e;
@@ -16,25 +16,27 @@ h1 {
     color: white;
 }
 h2 {
-    font-size: 19px;
+    font-size: 3vh;
     position: relative;
-    top: -50px;
-    right: -177px;
+    top: -8%;
+    left: 35%; 
+}
+.topper {
+    display: block;
+    width: 90vh;
 }
 #front {
-    height: 90vh;
     width: 90vh;
     margin: auto;
 }
 #back {
-    height: 90vh;
     width: 90vh;
     margin: auto;
 }
 .wrapper {
-    height: max-content;
+    height: 100vh;
     box-sizing: border-box;
-    border: solid black 6px;
+    border: solid black 1.15vh;
     border-style: none solid solid solid;
     background-color: white;
     font-size: 16px;
@@ -47,10 +49,7 @@ ul li {
     list-style-type: none;
 }
 
-.topper {
-    display: block;
-    width: 90vh;
-}
+
 form {
     position: relative;
     top: -20px;
@@ -69,22 +68,4 @@ input[type="text"]:focus {
     border: 2px solid rgb(64, 72, 230);
     outline: 0;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-}
-#filledIn {
-    margin: 20px;
-    margin-top: 0;
-}
-a {
-    text-decoration: none;
-    width: 100px;
-    height: 70px;
-    border: solid black 2px;
-    box-shadow: 2px 2px black;
-    background-color: white;
-    color: black;
-    /* transition: ease-in-out 1s; */
-}
-a:hover {
-    /* transform: scale(50%); */
-    box-shadow: 4px 4px black;
 }
