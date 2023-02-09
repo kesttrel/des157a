@@ -29,8 +29,8 @@ h2 {
     width: 90vh;
     margin: auto;
 }
-.wrapper {
-    height: 100vh;
+.bodyWrapper {
+    height: 70vh;
     box-sizing: border-box;
     border: solid black 1.15vh;
     border-style: none solid solid solid;
@@ -41,8 +41,6 @@ form, article {
     margin: 0 20px;
 }
 form {
-    display: flex;
-    flex-direction: column;
     width: 90%;
     margin: auto;
 }
@@ -60,7 +58,6 @@ input[type="text"] {
 }
 input[type="submit"] {
     width: 200px;
-    margin: auto;
     margin-top: 20px;
     padding: 10px;
     border: 2px solid black;
