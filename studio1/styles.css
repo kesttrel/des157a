@@ -3,7 +3,8 @@ h1, h2, p, img, button, .wrapper {
     padding: 0;
 } 
 body {
-    line-height: 1.2em;
+    max-width: 1200px;
+    margin: auto;
     background-color: #2e2e2e;
     font-family: 'Source Code Pro', monospace;
 }
@@ -18,52 +19,72 @@ h1 {
 h2 {
     font-size: 3vh;
     position: relative;
-    top: -8%;
-    left: 35%; 
+    top: -12%;
+    left: 36%; 
 }
-.topper {
-    display: block;
-    width: 90vh;
-}
-#front, #back {
-    width: 90vh;
+
+#card {
+    position: relative;
+    height: 100vh;
+    width: 98.5vh;
     margin: auto;
 }
-.bodyWrapper {
-    height: 70vh;
+/* .back, .front   {
+    position: absolute;
+    backface-visibility: hidden; 
+    transition: 1.5s;
+} 
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+.card:hover .back {
+    transform: rotateY(0deg);
+}*/
+/* NEED TO FIGURE OUT CSS FOR FLIPPING ON SUBMIT */
+.topper {
+    display: block;
+    height: 25vh;
+    background-color: white;
+}
+.contentWrapper {
+    height: 75vh;
     box-sizing: border-box;
     border: solid black 1.15vh;
-    border-style: none solid solid solid;
     background-color: white;
     font-size: 16px;
 }
 form, article {
-    margin: 0 20px;
-}
-form {
     width: 90%;
     margin: auto;
+    line-height: 1.7em;
 }
 label {
+    width: 45%;
+    font-size: 2.8vh;
     font-weight: 700;
-    margin: 5px 0;
 }
 input[type="text"] {
+    border: 2px solid black;
+    border-style: none none solid none;
+    font-size: 2.2vh;
     font-weight: 300;
-    font-size: 14px;
-    width: 100%;
+    width: 55%
 }
 .inputItem {
     display: flex;
-    margin: 5px;
+    margin-bottom: 1vh;
 }
 input[type="submit"] {
+    position: relative;
+    bottom: 0;
+    left: 61.25%;
     width: 200px;
     margin-top: 20px;
     padding: 10px;
     border: 2px solid black;
     outline: 0;
     margin-bottom: 5px;
+    background-color: white;
 }
 input[type="submit"]:hover {
     box-shadow: 4px 4px #000000;
