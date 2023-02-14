@@ -29,18 +29,23 @@ h2 {
     width: 98.5vh;
     margin: auto;
 }
-/* .back, .front   {
+.back, .front   {
     position: absolute;
     backface-visibility: hidden; 
     transition: 1.5s;
 } 
-.card:hover .front {
+.front {
+    transform: rotateY(0deg);
+}
+.back {
+    transform: rotateY(-180deg);
+}
+.rotateFront {
     transform: rotateY(180deg);
 }
-.card:hover .back {
+.rotateBack {
     transform: rotateY(0deg);
-}*/
-/* NEED TO FIGURE OUT CSS FOR FLIPPING ON SUBMIT */
+}
 .topper {
     display: block;
     height: 25vh;
@@ -51,16 +56,16 @@ h2 {
     box-sizing: border-box;
     border: solid black 1.15vh;
     background-color: white;
-    font-size: 16px;
+    font-size: 20px;
 }
 form, article {
     width: 90%;
     margin: auto;
-    line-height: 1.7em;
+    line-height: 2.1em;
 }
 label {
     width: 45%;
-    font-size: 2.8vh;
+    font-size: 2.7vh;
     font-weight: 700;
 }
 input[type="text"] {
@@ -88,4 +93,8 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     box-shadow: 4px 4px #000000;
+}
+
+.special {
+    font-weight: 700;
 }
