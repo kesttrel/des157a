@@ -17,11 +17,28 @@ h1 {
     background: linear-gradient(0deg, rgba(26, 26, 26,0) 0%, rgba(26, 26, 26,0.45) 5%, rgba(26, 26, 26,0.75) 10%, rgba(26, 26, 26, 0.981) 30%, rgba(26, 26, 26, 1) 100%);
     padding-bottom: 50px;
 }
-img {
+#headerImg {
     display: block;
     width: 100vw;
     margin: auto;
     /* filter: drop-shadow(0px 16px 50px black); */
+}
+.articleImg {
+    display: block;
+    padding: 20px;
+}
+figure, img, figcaption {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+figcaption {
+    padding-left: 20px;
+}
+div {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 article {
     width: 90vw;
@@ -72,6 +89,9 @@ footer address a:hover {
     background-color: white;
     border:  1px solid#2D2B2A;
 }
+/* img {
+    display: block;
+} */
 
 @media screen and (min-width: 500px) {
     h1 {
@@ -90,6 +110,6 @@ footer address a:hover {
     }
     p {
         margin: 0;
-        padding: 0 20px 0 0;
+        padding: 20px;
     }
 }
