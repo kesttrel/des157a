@@ -19,8 +19,6 @@
         const adj2 = document.querySelector('#adj2').value;
         const adj3 = document.querySelector('#adj3').value;
 
-        
-
         let myText;
         if( noun ==''){
             myText = `please provide a noun`;
