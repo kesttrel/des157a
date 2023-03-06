@@ -1,0 +1,178 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    background-color: #F9F1F0;
+    margin: 25px;
+}
+header {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+h1 {
+    color: #ED7568;
+    font-weight: 700;
+    font-size: 60px;
+}
+#screenOne {
+    display: flex;
+    gap: 20px;
+    top: 0;
+    left: 0;
+}
+#screenTwo {
+    top: 0;
+    left: 0;
+}
+#rules {
+    width: 50%;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+#rules ul li {
+    line-height: 1.6em;
+    font-size: 20px;
+}
+.players {
+    display: flex;
+}
+.player {
+    text-align: center;
+}
+.pigImg {
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0 20px;
+}
+/* .pigImg img {
+
+} */
+.player h3 {
+    font-size: 26px;
+    margin: 10px;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-left: 20px; */
+}
+label {
+    font-weight: 800;
+    font-size: 24px;
+    color: #BDBDBD;
+}
+input {
+    border: solid #BDBDBD 2px;
+    height: 60px;
+    width: 330px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+/* how do i style the outline color?
+input:focus-visible {
+    border: solid #31211f 2px;
+} */
+.primaryButton {
+    width: 200px;
+    height: 65px;
+    border-radius: 50px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    font-size: 40px;
+    color: #F79489;
+    background-color: #F9C0B9;
+    border: none;
+    box-shadow: 4px 4px #F79489;
+}
+.primaryButton:hover {
+    color: #F9C0B9;
+    background-color: #F79489;
+    border: none;
+    box-shadow: 4px 4px #F9C0B9;
+}
+#PB1 {
+    display: flex;
+    justify-content: flex-end;
+}
+#secondaryButton {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #FADCD9;
+    background-color: #F9C0B9;
+    box-shadow: 4px 4px #FADCD9;
+}
+#secondaryButton:hover {
+    color: #F9C0B9;
+    background-color: #FADCD9;
+    box-shadow: 4px 4px #F9C0B9;
+}
+#dice {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.die {
+    height: 125px;
+    width: 125px;
+}
+#gameBgWhite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background-color: white;
+    width: 100vw;
+    height: 330px;
+}
+.gamePlayer {
+    display: flex;
+}
+.gamePlayers {
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.currentScore {
+    position: relative;
+    top: -25px;
+    font-weight: 800;
+    font-size: 24px;
+}
+.currentScore p {
+    font-size: 48px;
+    text-align: center;
+    margin: 0;
+}
+#turnScore {
+    display: grid;
+    place-content: center;
+    position: relative;
+    top: -120px;
+    font-weight: 800;
+    font-size: 32px;
+}
+#turnScore p {
+    font-size: 100px;
+    text-align: center;
+    margin: 0;
+}
+.gameButtons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    position: relative;
+    top: -110px;
+}
+.showing {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
+}

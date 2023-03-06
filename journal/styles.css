@@ -65,7 +65,7 @@ footer address a {
     transition: all .5s ease-in-out;
     text-decoration: none;
 }
-footer address a, button:hover {
+footer address a:hover {
     color: #2D2B2A;
     background-color: white;
     border:  1px solid#2D2B2A;
@@ -80,4 +80,9 @@ button {
     border:  1px solid#2d2b2a00;
     border-radius: 0 5px 5px 5px;
     transition: all .5s ease-in-out;
+}
+button:hover {
+    color: #2D2B2A;
+    background-color: white;
+    border:  1px solid#2D2B2A;
 }
