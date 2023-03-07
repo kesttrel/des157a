@@ -3,7 +3,7 @@
     console.log('reading js')
     const gameControl = document.querySelector('#gamecontrol');
     const play = document.querySelector('#play');
-    const game = document.querySelector('#game');
+    const gameScreen = document.querySelector('#gameScreen');
     const score = document.querySelector('score');
     let actionArea = document.querySelector('#actions');
 
@@ -22,7 +22,8 @@
 
     play.addEventListener('click', function(){
         //changes from rules to game screen
-        screenOne.className('showing') === 'hidden';
+        screenOne.className = 'hidden';
+        gameScreen.className = 'showing';
          //randomly set the game index
         gameData.index = Math.round(Math.random());
         console.log(`index: ${gameData.index}`);
