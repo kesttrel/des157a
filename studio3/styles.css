@@ -109,6 +109,9 @@ input {
     right: 25px;
 }
 .secondaryButton {
+    font-size: 30px;
+    width: 130px;
+    height: 50px;
     color: #FADCD9;
     background-color: #F9C0B9;
     box-shadow: 4px 4px #FADCD9;

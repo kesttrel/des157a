@@ -7,7 +7,7 @@
     const score = document.querySelector('score');
     let actionArea = document.querySelector('#actions');
 
-    const screenOne = document.querySelector('#screenOne')
+    const screenOne = document.querySelector('#wrapper');
 
     let gameData = {
         dice: ['d1.svg', 'd2.svg', 'd3.svg','d4.svg', 'd5.svg', 'd6.svg',],
@@ -35,7 +35,6 @@
     })
 
     function setUpTurn(){
-        gameScreen.className('hidden') === 'showing';
 
         document.querySelector('#roll').addEventListener('click', function(){
             //call roll the dice function
