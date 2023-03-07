@@ -20,17 +20,21 @@ h1 {
     top: 0;
     left: 0;
 }
-#screenTwo {
+#gameScreen {
     top: 0;
     left: 0;
 }
-#rules {
+.rules {
     width: 50%;
     background-color: white;
     padding: 10px 20px;
     border-radius: 20px;
 }
-#rules ul li {
+.rules h2 {
+    font-size: 28px;
+    margin: 20px;
+}
+.rules ul li {
     line-height: 1.6em;
     font-size: 20px;
 }
@@ -47,9 +51,6 @@ h1 {
     background-color: white;
     margin: 0 20px;
 }
-/* .pigImg img {
-
-} */
 .player h3 {
     font-size: 26px;
     margin: 10px;
@@ -58,25 +59,23 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin-left: 20px; */
 }
 label {
     font-weight: 800;
     font-size: 24px;
+    margin: 10px;
     color: #BDBDBD;
 }
 input {
-    border: solid #BDBDBD 2px;
+    color: #BDBDBD;
+    box-sizing: border-box;
+    border: solid #BDBDBD 3px;
     height: 60px;
     width: 330px;
     border-radius: 20px;
     font-size: 20px;
     padding: 0 10px;
 }
-/* how do i style the outline color?
-input:focus-visible {
-    border: solid #31211f 2px;
-} */
 .primaryButton {
     width: 200px;
     height: 65px;
@@ -88,29 +87,42 @@ input:focus-visible {
     background-color: #F9C0B9;
     border: none;
     box-shadow: 4px 4px #F79489;
+    transition: 0.3s;
 }
 .primaryButton:hover {
     color: #F9C0B9;
     background-color: #F79489;
-    border: none;
     box-shadow: 4px 4px #F9C0B9;
 }
-#PB1 {
+.primaryButton:active {
+    color: #F79489;
+    background-color: #F9C0B9;
+    box-shadow: 4px 4px #F79489;
+}
+.PB1 {
     display: flex;
     justify-content: flex-end;
 }
-#secondaryButton {
+#quitLocation {
     position: absolute;
     top: 25px;
     right: 25px;
+}
+.secondaryButton {
     color: #FADCD9;
     background-color: #F9C0B9;
     box-shadow: 4px 4px #FADCD9;
+    transition: 0.3s;
 }
-#secondaryButton:hover {
+.secondaryButton:hover {
     color: #F9C0B9;
     background-color: #FADCD9;
     box-shadow: 4px 4px #F9C0B9;
+}
+.secondaryButton:active {
+    color: #FADCD9;
+    background-color: #F9C0B9;
+    box-shadow: 4px 4px #FADCD9;
 }
 #dice {
     display: flex;
@@ -135,7 +147,7 @@ input:focus-visible {
 }
 .gamePlayers {
     position: relative;
-    top: 100px;
+    top: 170px;
     display: flex;
     justify-content: space-between;
 }
@@ -154,7 +166,7 @@ input:focus-visible {
     display: grid;
     place-content: center;
     position: relative;
-    top: -120px;
+    top: -20px;
     font-weight: 800;
     font-size: 32px;
 }
@@ -167,12 +179,11 @@ input:focus-visible {
     display: flex;
     gap: 25px;
     justify-content: center;
-    position: relative;
-    top: -110px;
+
 }
 .showing {
-    visibility: visible;
+    display: initial;
 }
 .hidden {
-    visibility: hidden;
+    display: none;
 }
