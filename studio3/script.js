@@ -75,6 +75,10 @@
                                 <img src="images/${gameData.dice[gameData.roll2 - 1]}">`;
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
+        gameData.score[gameData.index] += gameData.rollSum;
+        console.log(gameData.score[gameData.index]);
+        
+        
 
         
          // declares who's turn it is and provides user feedback throughout game NEED HELP !!!!!!!
