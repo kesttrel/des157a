@@ -26,47 +26,43 @@
             <div id="quitLocation">
                  <button class="primaryButton secondaryButton" id="quit">QUIT</button>
             </div>
-            <div id="dice">
+            <div id="actions">
                 <!-- <img src="images/d1.svg" alt="dice" class="die">
                 <img src="images/d2.svg" alt="dice" class="die"> -->
             </div>
-            <div id="playPanel">
-                <div class="gamePlayers">
-                    <div class="gamePlayer">
-                        <div class="player">
-                            <div class="pigImg">
-                                <img src="images/pig1.png" alt="player 1 icon">
-                            </div>
-                            <h3>Player 1</h3>
+            <div class="gamePlayers">
+                <div class="gamePlayer">
+                    <div class="player">
+                        <div class="pigImg" id="p1">
+                            <img src="images/pig1.png" alt="player 1 icon">
                         </div>
-                        <div class="currentScore">
-                            <h4 class="score">Current Score</h4>
-                            <p>#</p>
-                        </div>
+                        <h3>Player 1</h3>
                     </div>
-                
-                    <div class="gamePlayer">       
-                        <div class="currentScore">
-                            <h4 class="score">Current Score</h4>
-                            <p>#</p>
+                    <div class="currentScore">
+                        <h4>Score</h4>
+                        <p id="score1"></p>
+                    </div>
+                </div>
+            
+                <div class="gamePlayer">       
+                    <div class="currentScore">
+                        <h4>Score</h4>
+                        <p id="score2"></p>
+                    </div>
+                    <div class="player">
+                        <div class="pigImg" id="p2">
+                            <img src="images/pig2.png" alt="player 2 img">
                         </div>
-                        <div class="player">
-                            <div class="pigImg">
-                                <img src="images/pig2.png" alt="player 2 img">
-                            </div>
-                        <h3>Player 2</h3>
-                        </div>
-                    </div> 
-                </div>
-                <div id="turnScore">
-                    <h2>Turn Score</h2>
-                    <p>#</p>
-                </div>
-                <div class="gameButtons">
-                    <button class="primaryButton" id="roll">ROLL</button>
-                    <button class="primaryButton" id="pass">PASS</button>
-                </div>
+                    <h3>Player 2</h3>
+                    </div>
+                </div> 
             </div>
+            <p id="announce"></p>
+            <div class="gameButtons">
+                <button class="primaryButton" id="roll">ROLL</button>
+                <button class="primaryButton" id="pass">PASS</button>
+            </div>
+
         </div> 
         <div id="wrapper" class="showing">
        <div id="screenOne"  >
@@ -106,7 +102,7 @@
                         <input type="text" id="playerTwo" placeholder="enter name here">
                     </div>
                 </div>
-                <div class="PB1" id="gamecontrol">
+                <div class="PB1">
                     <button class="primaryButton" id="play">PLAY</button>
                 </div>
             </div>

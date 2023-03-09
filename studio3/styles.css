@@ -10,7 +10,7 @@ header {
     margin: auto;
 }
 h1 {
-    color: #ED7568;
+    color: #FF6958;
     font-weight: 700;
     font-size: 60px;
 }
@@ -51,6 +51,9 @@ h1 {
     background-color: white;
     margin: 0 20px;
 }
+.pigImg img {
+    width: 16t0px;
+}
 .player h3 {
     font-size: 26px;
     margin: 10px;
@@ -83,21 +86,20 @@ input {
     font-family: 'Comfortaa', cursive;
     font-weight: 400;
     font-size: 40px;
-    color: #F79489;
-    background-color: #F9C0B9;
+    color: white;
+    background-color: #FF6958;
     border: none;
-    box-shadow: 4px 4px #F79489;
-    transition: 0.3s;
+    transition: 0.6s;
 }
 .primaryButton:hover {
-    color: #F9C0B9;
-    background-color: #F79489;
-    box-shadow: 4px 4px #F9C0B9;
+    color: #FF6958;
+    background-color: white;
+    box-shadow: 4px 4px #FF6958;
 }
 .primaryButton:active {
-    color: #F79489;
-    background-color: #F9C0B9;
-    box-shadow: 4px 4px #F79489;
+    color: #F9C0B9;
+    background-color: #FF6958;
+    box-shadow: 4px 4px #F9C0B9;
 }
 .PB1 {
     display: flex;
@@ -112,22 +114,25 @@ input {
     font-size: 30px;
     width: 130px;
     height: 50px;
-    color: #FADCD9;
-    background-color: #F9C0B9;
-    box-shadow: 4px 4px #FADCD9;
+    color: white;
+    background-color: #FF6958;
+    border: none;
     transition: 0.3s;
 }
 .secondaryButton:hover {
-    color: #F9C0B9;
-    background-color: #FADCD9;
-    box-shadow: 4px 4px #F9C0B9;
+    color: #FF6958;
+    background-color: white;
+    box-shadow: 4px 4px #FF6958;
 }
 .secondaryButton:active {
     color: #FADCD9;
     background-color: #F9C0B9;
     box-shadow: 4px 4px #FADCD9;
 }
-#dice {
+#actions {
+    height: 150px;
+    position: relative;
+    top: 60px;
     display: flex;
     justify-content: center;
     gap: 25px;
@@ -143,46 +148,39 @@ input {
     z-index: -2;
     background-color: white;
     width: 100vw;
-    height: 330px;
-}
-.gamePlayer {
-    display: flex;
+    height: 400px;
 }
 .gamePlayers {
     position: relative;
-    top: 170px;
+    top: 100px;
     display: flex;
     justify-content: space-between;
+}
+.gamePlayer {
+    display: flex;
 }
 .currentScore {
     position: relative;
     top: -25px;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 32px;
 }
 .currentScore p {
     font-size: 48px;
     text-align: center;
     margin: 0;
 }
-#turnScore {
-    display: grid;
-    place-content: center;
-    position: relative;
-    top: -20px;
-    font-weight: 800;
-    font-size: 32px;
-}
-#turnScore p {
-    font-size: 100px;
-    text-align: center;
-    margin: 0;
+#announce {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
 }
 .gameButtons {
     display: flex;
     gap: 25px;
     justify-content: center;
-
+    position: relative;
+    bottom: -10px;
 }
 .showing {
     display: initial;
