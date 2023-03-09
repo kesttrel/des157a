@@ -1,7 +1,7 @@
 body {
     font-family: 'Comfortaa', cursive;
     font-weight: 400;
-    background-color: #F9F1F0;
+    background-color: #0e0e0e;
     margin: 25px;
 }
 header {
@@ -55,6 +55,7 @@ h1 {
     width: 16t0px;
 }
 .player h3 {
+    color: white;
     font-size: 26px;
     margin: 10px;
 }
@@ -146,7 +147,7 @@ input {
     top: 0;
     left: 0;
     z-index: -2;
-    background-color: white;
+    background-color: black;
     width: 100vw;
     height: 400px;
 }
@@ -164,6 +165,7 @@ input {
     top: -25px;
     font-weight: 800;
     font-size: 32px;
+    color: white;
 }
 .currentScore p {
     font-size: 48px;
@@ -171,6 +173,7 @@ input {
     margin: 0;
 }
 #announce {
+    color: white;
     font-size: 25px;
     display: flex;
     justify-content: center;
