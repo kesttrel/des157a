@@ -20,51 +20,7 @@
     </header>
     <main>
       
-        
-    <div id="gameScreen" class="hidden">
-        <div id="gameBgWhite"></div>
-        <div id="quitLocation">
-                <button class="primaryButton secondaryButton" id="quit">QUIT</button>
-        </div>
-        <div id="actions">
-            <!-- <img src="images/d1.svg" alt="dice" class="die">
-            <img src="images/d2.svg" alt="dice" class="die"> -->
-        </div>
-        <div class="gamePlayers">
-            <div class="gamePlayer">
-                <div class="player">
-                    <div class="pigImg" id="p1">
-                        <img src="images/pig1.png" alt="player 1 icon">
-                    </div>
-                    <h3>Player 1</h3>
-                </div>
-                <div class="currentScore">
-                    <h4>Score</h4>
-                    <p id="score1"></p>
-                </div>
-            </div>
-        
-            <div class="gamePlayer">       
-                <div class="currentScore">
-                    <h4>Score</h4>
-                    <p id="score2"></p>
-                </div>
-                <div class="player">
-                    <div class="pigImg" id="p2">
-                        <img src="images/pig2.png" alt="player 2 img">
-                    </div>
-                <h3>Player 2</h3>
-                </div>
-            </div> 
-        </div>
-        <p id="announce"></p>
-        <div class="gameButtons">
-            <button class="primaryButton" id="roll">ROLL</button>
-            <button class="primaryButton" id="pass">PASS</button>
-        </div>
-
-    </div> 
-    
+<!-- screen 1 -->
     <div id="wrapper" class="showing">
        <div id="screenOne"  >
             <div class="rules">
@@ -109,7 +65,53 @@
             </div>
         </div>
     </div>
-       
+    
+<!-- screen 2  -->
+    <div id="gameScreen" class="hidden">
+        <div id="gameBgWhite"></div>
+        <div id="quitLocation">
+                <button class="primaryButton secondaryButton" id="quit">QUIT</button>
+        </div>
+        <div id="actions">
+            <!-- <img src="images/d1.svg" alt="dice" class="die">
+            <img src="images/d2.svg" alt="dice" class="die"> -->
+        </div>
+        <div class="gamePlayers">
+            <div class="gamePlayer">
+                <div class="player">
+                    <div class="pigImg" id="p1">
+                        <img src="images/pig1.png" alt="player 1 icon">
+                    </div>
+                    <h3>Player 1</h3>
+                </div>
+                <div class="currentScore">
+                    <h4>Score</h4>
+                    <p id="score1">0</p>
+                </div>
+            </div>
+        
+            <div class="gamePlayer">       
+                <div class="currentScore">
+                    <h4>Score</h4>
+                    <p id="score2">0</p>
+                </div>
+                <div class="player">
+                    <div class="pigImg" id="p2">
+                        <img src="images/pig2.png" alt="player 2 img">
+                    </div>
+                <h3>Player 2</h3>
+                </div>
+            </div> 
+        </div>
+        <p id="rollScore"></p>
+        <p id="announce"></p>
+        <div class="gameButtons">
+            <button class="primaryButton" id="roll">ROLL</button>
+            <button class="primaryButton" id="pass">PASS</button>
+        </div>
+
+    </div> 
+
     </main>
 </body>
 </html>

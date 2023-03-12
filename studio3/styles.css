@@ -81,7 +81,8 @@ input {
 }
 .primaryButton {
     width: 200px;
-    height: 65px;
+    height: fit-content;
+    padding: 10px;
     border-radius: 50px;
     font-family: 'Comfortaa', cursive;
     font-weight: 400;
@@ -132,7 +133,7 @@ input {
 #actions {
     height: 150px;
     position: relative;
-    top: 60px;
+    top: 50px;
     display: flex;
     justify-content: center;
     gap: 25px;
@@ -149,6 +150,9 @@ input {
     background-color: white;
     width: 100vw;
     height: 400px;
+}
+#wrap {
+    position: relative;
 }
 .gamePlayers {
     position: relative;
@@ -170,21 +174,33 @@ input {
     text-align: center;
     margin: 0;
 }
-#announce {
-    font-size: 25px;
+#rollScore {
     display: flex;
     justify-content: center;
+    font-size: 30px;
+    position: relative;
+    bottom: 100px;
+}
+#announce {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 75px;
 }
 .gameButtons {
     display: flex;
     gap: 25px;
     justify-content: center;
     position: relative;
-    bottom: -10px;
+    bottom: 50px;
 }
 .showing {
     display: initial;
 }
 .hidden {
     display: none;
+}
+.playerTurn {
+    border: solid #F79489 8px;
 }

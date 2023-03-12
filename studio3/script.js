@@ -5,6 +5,7 @@
     const gameScreen = document.querySelector('#gameScreen');
     const scoreOne = document.querySelector('#score1');
     const scoreTwo = document.querySelector('#score2');
+    const rollScore = document.querySelector('#rollScore');
     const announce = document.querySelector('#announce');
     const actionArea = document.querySelector('#actions');
 
@@ -12,93 +13,122 @@
 
     let gameData = {
         dice: ['d1.svg', 'd2.svg', 'd3.svg', 'd4.svg', 'd5.svg', 'd6.svg',],
-        players: ['player 1', 'player 2'],
+        players: ['Player 1', 'Player 2'],
         score: [0, 0],
         roll1: 0,
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 100
+        gameEnd: 30
     }
+
+    document.querySelector('#quit').addEventListener('click', function () {
+        screenOne.className = 'showing';
+        gameScreen.className = 'hidden';
+
+        //NEED TO ADD RULES TO RESET GAME HERE
+    })
 
     startGame.addEventListener('click', function () {
         //changes from rules to game screen
         screenOne.className = 'hidden';
         gameScreen.className = 'showing';
-        //randomly set the game index
+
+        //randomly sets the game index
         gameData.index = Math.round(Math.random());
         console.log(`index: ${gameData.index}`);
 
-        document.querySelector('#quit').addEventListener('click', function () {
-            screenOne.className = 'showing';
-            gameScreen.className = 'hidden';
-        })
         setUpTurn();
     })
 
     function setUpTurn() {
         // announces which player's turn it is
         console.log(`index: ${gameData.index}`);
-        console.log(gameData.players)
-        announce.innerHTML = `Roll the dice for ${gameData.players[gameData.index]}`;
+        console.log(gameData.players[gameData.index])
+        announce.innerHTML = `Roll the dice for &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
+        rollScore.innerHTML = "Let's go!";
 
         //sets the pink outline to player img to indicate who's turn it is NEED HELP
         if (gameData.index == 0) {
-
-            //ADD CSS classname to #p1
-            document.querySelector('#p1').style.border = 'solid #F79489 8px'
-            //REMOVE CSS Classname from #p2
+            document.querySelector('#p1').className = 'playerTurn pigImg';
+            document.querySelector('#p2').classList.remove('playerTurn');
         }
-        else {
-            document.querySelector('#p2').style.border = 'solid #F79489 8px'
+        else if (gameData.index == 1) {
+            document.querySelector('#p2').className = 'playerTurn pigImg';
+            document.querySelector('#p1').classList.remove('playerTurn');
         }
 
         document.querySelector('#roll').addEventListener('click', function () {
             rollTheDice();
         })
+
         document.querySelector('#pass').addEventListener('click', function () {
-            gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+            console.log(`current score when oass clicked / 1: ${gameData.score[0]} / ${gameData.score[1]}`)
+            gameData.index 
+            ? (gameData.index = 0) 
+            : (gameData.index = 1);
+            announce.innerHTML = `Roll the dice for &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
         })
     }
 
     function rollTheDice() {
+        console.log(`current score before roll / 1: ${gameData.score[0]} / 2: ${gameData.score[1]}`);
         actionArea.innerHTML = '';
 
         //get random values for 1-6 for the turn score
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
 
-       
-
         //put the dice images on the screen; the dice array index needs to be 1 less than roll1 and roll2
         actionArea.innerHTML = `<img src="images/${gameData.dice[gameData.roll1 - 1]}"> 
                                 <img src="images/${gameData.dice[gameData.roll2 - 1]}">`;
+
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
-        gameData.score[gameData.index] += gameData.rollSum;
-        console.log(gameData.score[gameData.index]);
-        
-        
 
-        
-         // declares who's turn it is and provides user feedback throughout game NEED HELP !!!!!!!
-         announce.innerHTML = `+${gameData.rollSum}`;
+        //if two 1's are rolled
+        if (gameData.rollSum === 2){
+            console.log('snake eyes');
+            rollScore.innerHTML = 'Oh snap! Snake eyes!';
+            gameData.score[gameData.index] = 0;
 
-         showCurrentScore();
+            //switches players
+            gameData.index 
+                ? (gameData.index = 0)
+                : (gameData.index = 1);
+            // NEED HELP - is saying switching to wrong player
+            announce.innerHTML = `switching to &nbsp;<strong>${gameData.players[gameData.index ]}</strong>`;
+            setTimeout(setUpTurn, 2000);
+        }
+        //if either die is a 1
+        else if (gameData.roll1 === 1 || gameData.roll2 === 1){
+            console.log('one of the two dice is a 1');
+            rollScore.innerHTML = 'Sorry, one of your rolls was a 1!';
 
-        document.querySelector('#pass').addEventListener('click', function () {
-            //switch player
-            gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-            setUpTurn();
-        })
+            //switches players
+            gameData.index 
+                ? (gameData.index = 0)
+                : (gameData.index = 1);
+            announce.innerHTML = `switching to &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
+            setTimeout(setUpTurn, 2000);
+        }
+        //if niether die is a 1 
+        else {
+            console.log('the game proceeds');
+            rollScore.innerHTML = `+${gameData.rollSum}`;
+            gameData.score[gameData.index] += gameData.rollSum;
+        }
+         checkWinningFunction();
     }
 
     function checkWinningFunction() {
-        if (gameData.score[gameData.index] > gameData.End) {
-            announce.innerHTML = `${[gameData.players[gameData.index]]} wins with ${gameData.score[gameData.index]} points!`;
+        if (gameData.score[gameData.index] > gameData.gameEnd) {
+            showCurrentScore();
 
-            actionArea.innerHTML = '<p>Start a new game';
-            document.querySelector('#quit').innerHTML = 'Start a New Game?';
+            announce.innerHTML = `<strong>${[gameData.players[gameData.index]]}</strong>&nbsp; wins with &nbsp;<strong>${gameData.score[gameData.index]}&nbsp;points</strong>!`;
+
+            actionArea.innerHTML = '<button class="primaryButton">Start a New Game?</button>';
+            //add reset points to 0?
         }
         else {
             showCurrentScore();
