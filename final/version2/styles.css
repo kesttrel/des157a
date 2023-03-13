@@ -1,0 +1,276 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    background-color: #F9F1F0;
+    margin: 25px;
+}
+header {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+h1 {
+    color: #FF6958;
+    font-weight: 700;
+    font-size: 60px;
+}
+button {
+    cursor: pointer;
+}
+#bgDark {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #000000d0;
+}
+#rulesButton {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    color: #FF6958;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+    font-size: 25px;
+    transition: ease-in 0.3s;
+}
+#rulesButton:hover {
+    color: black;
+}
+#rulesModal {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 75vw;
+    z-index: 1;
+}
+.modalContent {
+    font-size: 25px;
+    line-height: 1.6em;
+    background-color: white;
+    padding: 0 25px 25px 100px;
+    border-radius: 30px;
+}
+#rulesModal h2 {
+    position: absolute;
+    top: 0;
+    left: 45%;
+}
+#xMarkIcon {
+    display: block;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 20px;
+    left: -75px;
+}
+#screenOne {
+    gap: 20px;
+    top: 0;
+    left: 0;
+}
+#gameScreen {
+    top: 0;
+    left: 0;
+}
+.rules {
+    width: 50%;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.rules h2 {
+    font-size: 28px;
+    margin: 20px;
+}
+.rules ul li {
+    line-height: 1.6em;
+    font-size: 20px;
+}
+.players {
+    display: flex;
+}
+.player {
+    text-align: center;
+}
+.pigImg {
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0 20px;
+}
+.pigImg img {
+    width: 160px;
+}
+.player h3 {
+    font-size: 26px;
+    margin: 10px;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+label {
+    font-weight: 800;
+    font-size: 24px;
+    margin: 10px;
+    color: #BDBDBD;
+}
+input {
+    color: #BDBDBD;
+    box-sizing: border-box;
+    border: solid #BDBDBD 3px;
+    height: 60px;
+    width: 330px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+.primaryButton {
+    width: 200px;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 50px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    background-color: #FF6958;
+    border: none;
+    transition: 0.6s;
+}
+.primaryButton:hover {
+    color: #FF6958;
+    background-color: white;
+    box-shadow: 4px 4px #FF6958;
+}
+.primaryButton:active {
+    color: #F9C0B9;
+    background-color: #FF6958;
+    box-shadow: 4px 4px #F9C0B9;
+}
+.PB1 {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+#quitLocation {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+.secondaryButton {
+    font-size: 30px;
+    width: 130px;
+    height: 50px;
+    color: white;
+    background-color: #FF6958;
+    border: none;
+    transition: 0.3s;
+}
+.secondaryButton:hover {
+    color: #FF6958;
+    background-color: white;
+    box-shadow: 4px 4px #FF6958;
+}
+.secondaryButton:active {
+    color: #FADCD9;
+    background-color: #F9C0B9;
+    box-shadow: 4px 4px #FADCD9;
+}
+#actions {
+    height: 150px;
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.die {
+    height: 125px;
+    width: 125px;
+}
+#gameBgWhite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background-color: white;
+    width: 100vw;
+    height: 400px;
+}
+#wrap {
+    position: relative;
+}
+.gamePlayers {
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.gamePlayer {
+    display: flex;
+}
+.currentScore {
+    position: relative;
+    top: -25px;
+    font-weight: 800;
+    font-size: 32px;
+}
+.currentScore p {
+    font-size: 48px;
+    text-align: center;
+    margin: 0;
+}
+#rollScore {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    position: relative;
+    bottom: 100px;
+}
+#announce {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 75px;
+}
+.gameButtons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    position: relative;
+    bottom: 50px;
+}
+.showing {
+    display: initial;
+}
+.hidden {
+    display: none;
+}
+.playerTurn {
+    border: solid #F79489 8px;
+}
+footer a {
+    position: absolute;
+    color:white;
+    bottom: 25px;
+    left: 25px;
+    text-decoration: none;
+    transition: ease-in-out 1s;
+}
+footer a:hover {
+    color: #F79489; 
+}
