@@ -37,6 +37,8 @@
     })
 
     startGame.addEventListener('click', function () {
+        // NEED HELP - startGame Button not playing sound when pressed
+        startGameSound.play();
         //changes from rules to game screen
         screenOne.className = 'hidden';
         gameScreen.className = 'showing';

@@ -204,3 +204,14 @@ input {
 .playerTurn {
     border: solid #F79489 8px;
 }
+footer a {
+    position: absolute;
+    color:white;
+    bottom: 25px;
+    left: 25px;
+    text-decoration: none;
+    transition: ease-in-out 1s;
+}
+footer a:hover {
+    color: #F79489; 
+}
