@@ -9,6 +9,12 @@
     const announce = document.querySelector('#announce');
     const actionArea = document.querySelector('#actions');
 
+    const startGameSound = new Audio('sound/click.mp3');
+    const gruntSound = new Audio('sounds/pig-grunt.mp3');
+    const rollSound = new Audio('sounds/rolling-dice.mp3');
+    const passSound = new Audio('sounds/cartoon-splat.mp3');
+    const snakeEyesSound = new Audio('sound/pig-oink.mp3');
+
     const screenOne = document.querySelector('#wrapper');
 
     let gameData = {
@@ -55,6 +61,8 @@
     }
 
     function setUpTurn() {
+        
+
         // announces which player's turn it is
         console.log(`index: ${gameData.index}`);
         console.log(gameData.players[gameData.index])
@@ -65,11 +73,16 @@
         whoseTurn();
 
         document.querySelector('#roll').addEventListener('click', function () {
+                gruntSound.play();
+
             rollTheDice();
         })
 
         document.querySelector('#pass').addEventListener('click', function () {
-            console.log(`current score when oass clicked / 1: ${gameData.score[0]} / ${gameData.score[1]}`)
+            passSound.play();
+
+            console.log(`current score when pass was clicked / 1: ${gameData.score[0]} / ${gameData.score[1]}`)
+            //switches player turn
             gameData.index 
             ? (gameData.index = 0) 
             : (gameData.index = 1);
@@ -88,6 +101,12 @@
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
 
+        //roll dice sound 
+        function delaySound(){
+            rollSound.play();
+        }
+        setTimeout(delaySound, 300);
+
         //put the dice images on the screen; the dice array index needs to be 1 less than roll1 and roll2
         actionArea.innerHTML = `<img src="images/${gameData.dice[gameData.roll1 - 1]}"> 
                                 <img src="images/${gameData.dice[gameData.roll2 - 1]}">`;
@@ -95,11 +114,14 @@
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
 
-        //if two 1's are rolled
+        //if two 1's / snake eyes are rolled
         if (gameData.rollSum === 2){
             console.log('snake eyes');
             rollScore.innerHTML = 'Oh snap! Snake eyes!';
             gameData.score[gameData.index] = 0;
+
+            rollSound.pause();
+            snakeEyesSound.play();
 
             //switches players
             gameData.index 
@@ -114,6 +136,9 @@
             console.log('one of the two dice is a 1');
             rollScore.innerHTML = 'Sorry, one of your rolls was a 1!';
 
+            rollSound.pause();
+            passSound.play();
+
             //switches players
             gameData.index 
                 ? (gameData.index = 0)
@@ -126,8 +151,8 @@
             console.log('the game proceeds');
             rollScore.innerHTML = `+${gameData.rollSum}`;
             gameData.score[gameData.index] += gameData.rollSum;
-        }
-         checkWinningFunction();
+            checkWinningFunction();
+        }   
     }
 
     function checkWinningFunction() {
