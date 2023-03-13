@@ -27,6 +27,7 @@
         gameScreen.className = 'hidden';
 
         //NEED TO ADD RULES TO RESET GAME HERE
+        gameData = ''
     })
 
     startGame.addEventListener('click', function () {
@@ -41,14 +42,8 @@
         setUpTurn();
     })
 
-    function setUpTurn() {
-        // announces which player's turn it is
-        console.log(`index: ${gameData.index}`);
-        console.log(gameData.players[gameData.index])
-        announce.innerHTML = `Roll the dice for &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
-        rollScore.innerHTML = "Let's go!";
-
-        //sets the pink outline to player img to indicate who's turn it is NEED HELP
+    function whoseTurn(){
+        //sets the pink outline to player img to indicate who's turn it is
         if (gameData.index == 0) {
             document.querySelector('#p1').className = 'playerTurn pigImg';
             document.querySelector('#p2').classList.remove('playerTurn');
@@ -57,6 +52,17 @@
             document.querySelector('#p2').className = 'playerTurn pigImg';
             document.querySelector('#p1').classList.remove('playerTurn');
         }
+    }
+
+    function setUpTurn() {
+        // announces which player's turn it is
+        console.log(`index: ${gameData.index}`);
+        console.log(gameData.players[gameData.index])
+        announce.innerHTML = `Roll the dice for &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
+        rollScore.innerHTML = "Let's go!";
+
+        //sets the pink outline to player img to indicate who's turn it is
+        whoseTurn();
 
         document.querySelector('#roll').addEventListener('click', function () {
             rollTheDice();
@@ -68,6 +74,9 @@
             ? (gameData.index = 0) 
             : (gameData.index = 1);
             announce.innerHTML = `Roll the dice for &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
+
+            //sets the pink outline to player img to indicate who's turn it is
+            whoseTurn();
         })
     }
 
