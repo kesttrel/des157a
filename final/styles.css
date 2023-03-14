@@ -5,3 +5,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
+main {
+    padding: 0 100px;
+}
+#images {
+    width: 600px;
+    margin: auto;
+}
