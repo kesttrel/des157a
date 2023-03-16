@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Game of Pig</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Rules Button  -->
+    <button id="rulesButton">Rules</button>
+    <!-- Overlay -->
+    <div id="bgDark" type="button" class="hidden">
+    </div>
+    <div id="rulesModal" class="hidden">
+        <div class="modalContent">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" id="xMarkIcon"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            <h2>Rules</h2>
+            <ol>
+                <li>There are <strong>2 players</strong>.</li>
+                <li>The player whose turn it is rolls the dice</li>
+                <li>The total of the roll is added to the current players score and the player rolls again</li>
+                <li>If a 1 is rolled, the turn is passed to the next player</li>
+                <li>After each roll the player can either roll again, or if they feel their luck is running thin, they can pass their turn to the next player</li>
+                <li>If either player rolls a double 1 or <strong>“snake eyes”</strong> their total score is reset to 0</li>
+            </ol>
+        </div>
+    </div>  
+
+    <header>
+    <div id="headr">
+        <h1>The Game of</h1>
+        <img src="images/pigLogo.png" alt="pig logo" id="headerPig">
+        <button id="goButton">Go!</button>
+    </div>
+    </header>
+    <main>
+        
+<!-- screen 1 -->
+    <div id="wrapper" class="hidden">
+       <div id="screenOne">
+        <div class="player">
+            <div class="pig1Wrapper">
+                <img src="images/pig1.png" alt="pig image" id="pig1" height="300">
+                <div>
+                <svg class="pigSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189.01 160.08"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="m162.67,160.08l-.08-.06c-41.81-35.73-100.91-42.98-150.11-18.42C3.83,126.52-.79,108.81.11,89.96,2.45,40.72,42.98,1.19,92.22.03c53.24-1.25,96.79,41.56,96.79,94.55,0,24.97-10.54,48.59-26.33,65.5"/></svg>
+                </div>
+            </div>
+            <div class="enterName">
+                <label for="playerOne">Name</label>
+                <input type="text" id="playerOne" placeholder="enter name here">
+            </div>
+        </div>
+        <div class="player">
+            <div class="pig2Wrapper">
+                <img src="images/pig2.png" alt="pig image" id="pig2">
+                <div>
+                <svg class="pigSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189.01 160.08"><defs><style>.cls-1{fill:#fff;}</style></defs><path class="cls-1" d="m162.67,160.08l-.08-.06c-41.81-35.73-100.91-42.98-150.11-18.42C3.83,126.52-.79,108.81.11,89.96,2.45,40.72,42.98,1.19,92.22.03c53.24-1.25,96.79,41.56,96.79,94.55,0,24.97-10.54,48.59-26.33,65.5"/></svg>
+                </div>
+            </div>
+            <div class="enterName">
+                <label for="playerTwo">Name</label>
+                <input type="text" id="playerTwo" placeholder="enter name here">
+            </div>
+        </div>
+        </div>
+        <div class="PB1">
+                <button class="primaryButton" id="play">PLAY</button>
+            </div>
+    </div>
+    <!-- Screen 1 End  -->
+    
+<!-- screen 2  -->
+    <div id="gameScreen" class="hidden">
+        <div id="gameBgWhite"></div>
+        <div id="quitLocation">
+                <button class="primaryButton secondaryButton" id="quit">QUIT</button>
+        </div>
+        <div id="actions">
+            <!-- <img src="images/d1.svg" alt="dice" class="die">
+            <img src="images/d2.svg" alt="dice" class="die"> -->
+        </div>
+        <div class="gamePlayers">
+            <div class="gamePlayer">
+                <div class="player">
+                    <div class="pigImg" id="p1">
+                        <img src="images/pig1.png" alt="player 1 icon">
+                    </div>
+                    <h3 id="p1PrintName">Player 1</h3>
+                </div>
+                <div class="currentScore">
+                    <h4>Score</h4>
+                    <p id="score1">0</p>
+                </div>
+            </div>
+        
+            <div class="gamePlayer">       
+                <div class="currentScore">
+                    <h4>Score</h4>
+                    <p id="score2">0</p>
+                </div>
+                <div class="player">
+                    <div class="pigImg" id="p2">
+                        <img src="images/pig2.png" alt="player 2 img">
+                    </div>
+                <h3 id="p2PrintName">Player 2</h3>
+                </div>
+            </div> 
+        
+        </div>
+            <p id="rollScore"></p>
+            <p id="announce"></p>
+            <div class="gameButtons">
+                <button class="primaryButton" id="roll">ROLL</button>
+                <button class="primaryButton" id="pass">PASS</button>
+            </div>
+    </div> 
+
+    </main>
+    <footer>
+        <a href="sources.html">Sound Credits</a>
+    </footer>
+</body>
+</html>

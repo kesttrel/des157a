@@ -1,6 +1,8 @@
 (function () {
     'use strict'
     console.log('reading js')
+   
+    const goButton = document.querySelector('#goButton');
     const startGame = document.querySelector('#play');
     const gameScreen = document.querySelector('#gameScreen');
     const scoreOne = document.querySelector('#score1');
@@ -15,6 +17,7 @@
     const passSound = new Audio('sounds/cartoon-splat.mp3');
     const snakeEyesSound = new Audio('sounds/pig-oink.mp3');
 
+    const headr = document.querySelector('header');
     const screenOne = document.querySelector('#wrapper');
 
     const rulesModal = document.querySelector('#rulesModal');
@@ -30,14 +33,27 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 10,
+        gameEnd: 30
     }
 
+    // Go Button Loads Intro Page to ScreenOne
+    goButton.addEventListener('click', function(){
+        document.querySelector('#headerPig').className = 'rotate';
+
+        function loadNextPage() {
+            screenOne.classList.remove('hidden');
+            screenOne.className = 'showing';
+
+            headr.className = 'hidden'; 
+        }
+        setTimeout(loadNextPage, 1200);
+    })
+
+    // Rules Panel 
     rulesButton.addEventListener('click', function(){
         bgDark.className = 'showing';
         rulesModal.className = 'showing';
     })
-
     xMarkIcon.addEventListener('click', function(){
         bgDark.className = 'hidden';
         rulesModal.className = 'hidden';
@@ -50,18 +66,12 @@
         rulesModal.className = 'hidden';
         }
     })
-
-    document.querySelector('#quit').addEventListener('click', function () {
-        screenOne.className = 'showing';
-        gameScreen.className = 'hidden';
-
-        //NEED TO ADD RULES TO RESET GAME HERE
-        gameData = ''
-    })
+    
     startGame.addEventListener('click', function () {
         // NEED HELP - startGame Button not playing sound when pressed
         startGameSound.play();
         //changes from rules to game screen
+        //add screenOne.classList.remove('');
         screenOne.className = 'hidden';
         gameScreen.className = 'showing';
 
@@ -71,6 +81,33 @@
 
         setUpTurn();
     })
+
+    document.querySelector('#quit').addEventListener('click', function () {
+        screenOne.className = 'showing';
+        gameScreen.className = 'hidden';
+
+        //NEED TO ADD RULES TO RESET GAME HERE
+        gameData = ''
+    })
+    // function chooseAvatar() {
+    //     const pig3 = document.querySelector('#pig3');
+
+    //     pig3.addEventListener('click', function(){
+    //         document.querySelector('pigImg, img').src - 'images/pig1.png'
+    //     })
+    // }
+
+    function playerName() {
+        let p1Name = document.querySelector('#playerOne').value;
+        let p2Name = document.querySelector('#playerTwo').value;
+
+        if (p1Name != '') {
+            document.querySelector('#p1PrintName').innerHTML = p1Name;
+        }
+        if (p1Name != '') {
+            document.querySelector('#p2PrintName').innerHTML = p2Name;
+        }
+    }
 
     function whoseTurn(){
         //sets the pink outline to player img to indicate who's turn it is
@@ -91,6 +128,7 @@
         announce.innerHTML = `Roll the dice for &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
         rollScore.innerHTML = "Let's go!";
 
+        playerName();
         //sets the pink outline to player img to indicate who's turn it is
         whoseTurn();
 
@@ -129,6 +167,7 @@
         setTimeout(delaySound, 300);
 
         //put the dice images on the screen; the dice array index needs to be 1 less than roll1 and roll2
+        actionArea.className = 'dice';
         actionArea.innerHTML = `<img src="images/${gameData.dice[gameData.roll1 - 1]}"> 
                                 <img src="images/${gameData.dice[gameData.roll2 - 1]}">`;
 
