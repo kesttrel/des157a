@@ -76,6 +76,7 @@
         }
     })
     
+    //Play Button
     startGame.addEventListener('click', function () {
         // NEED HELP - startGame Button not playing sound when pressed
         gruntSound.play();
@@ -92,14 +93,37 @@
         setUpTurn();
     })
 
+    //Game Buttons
+    //Roll Button
+    document.querySelector('#roll').addEventListener('click', function () {
+            gruntSound2.play();
+            setTimeout(rollTheDice, 500);
+
+    })
+    //Pass Button
+    document.querySelector('#pass').addEventListener('click', function () {
+        gruntSound.play();
+
+        console.log(`current score when pass was clicked / 1: ${gameData.score[0]} / ${gameData.score[1]}`)
+        //switches player turn
+        gameData.index 
+        ? (gameData.index = 0) 
+        : (gameData.index = 1);
+
+        //sets the pink outline to player img to indicate who's turn it is
+        whoseTurn();
+    })
+
+    //Quit Button
     document.querySelector('#quit').addEventListener('click', function () {
         screenOne.className = 'showing';
         gameScreen.className = 'hidden';
 
-        //NEED TO ADD RULES TO RESET GAME HERE
-        gameData = ''
+        //Resets the game through a reload
+        location.reload();
     })
 
+    //Sets player's name
     function playerName() {
         let p1Name = document.querySelector('#playerOne').value;
         let p2Name = document.querySelector('#playerTwo').value;
@@ -112,6 +136,7 @@
         }
     }
 
+    //Prink border around player image who's turn it is
     function whoseTurn(){
         //sets the pink outline to player img to indicate who's turn it is
         if (gameData.index == 0) {
@@ -124,33 +149,16 @@
         }
     }
 
+    //Sets up the turn
     function setUpTurn() {
-        // announces which player's turn it is
+        //Announces which player's turn it is
         console.log(`index: ${gameData.index}`);
         console.log(gameData.players[gameData.index])
 
+        //Assings Player's name iputs if given
         playerName();
-        //sets the pink outline to player img to indicate who's turn it is
+        //Sets a pink border to player img to indicate who's turn it is
         whoseTurn();
-
-        document.querySelector('#roll').addEventListener('click', function () {
-                gruntSound2.play();
-                setTimeout(rollTheDice, 500);
-
-        })
-
-        document.querySelector('#pass').addEventListener('click', function () {
-            gruntSound.play();
-
-            console.log(`current score when pass was clicked / 1: ${gameData.score[0]} / ${gameData.score[1]}`)
-            //switches player turn
-            gameData.index 
-            ? (gameData.index = 0) 
-            : (gameData.index = 1);
-
-            //sets the pink outline to player img to indicate who's turn it is
-            whoseTurn();
-        })
     }
 
     function rollTheDice() {
@@ -162,22 +170,21 @@
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
 
-        //roll dice sound 
+        //Delays and plays roll dice sound 
         function delaySound(){
             rollSound.play();
         }
         setTimeout(delaySound, 300);
 
-        //put the dice images on the screen; the dice array index needs to be 1 less than roll1 and roll2
+        //Puts the dice images on the screen; the dice array index needs to be 1 less than roll1 and roll2
         actionArea.className = 'dice';
         actionArea.innerHTML = `<img src="images/${gameData.dice[gameData.roll1 - 1]}"> 
                                 <img src="images/${gameData.dice[gameData.roll2 - 1]}">`;
 
-        // IS THIS WHAT IS CAUSING THE MISCOUNTING?
+        //Calculates Roll Sum
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
-
-        //if two 1's / snake eyes are rolled
+        //If two 1's / Snake Eyes are rolled
         if (gameData.rollSum === 2){
             console.log('snake eyes');
             rollScore.innerHTML = 'Oh snap! Snake eyes!';
@@ -191,15 +198,13 @@
             gameData.index 
                 ? (gameData.index = 0)
                 : (gameData.index = 1);
-            // NEED HELP - is saying switching to wrong player
             announce.innerHTML = 'Passing turn';
             setUpTurn();
         }
-        //if either die is a 1
+        //If either die is a 1
         else if (gameData.roll1 === 1 || gameData.roll2 === 1){
             console.log('one of the two dice is a 1');
             rollScore.innerHTML = `Sorry, one of your rolls was a 1!`;
-            
 
             gruntSound.pause();
             gruntSound2.play();
@@ -211,27 +216,30 @@
             announce.innerHTML = 'Passing turn';
             setUpTurn();
         }
-        //if niether die is a 1 
+        //If niether die is a 1 
         else {
             console.log('the game proceeds');
             rollScore.innerHTML = `+${gameData.rollSum}`;
             gameData.score[gameData.index] += gameData.rollSum;
             announce.innerHTML = 'Roll again?';
             checkWinningFunction(); 
-        }
-          
+        }  
     }
 
     function checkWinningFunction() {
         if (gameData.score[gameData.index] >= gameData.gameEnd) {
             showCurrentScore();
-            rollScore = '';
-            announce = '';
 
             announce.innerHTML = `<strong>${[gameData.players[gameData.index]]}</strong>&nbsp; wins with &nbsp;<strong>${gameData.score[gameData.index]}&nbsp;points</strong>!`;
 
-            actionArea.innerHTML = '<button class="primaryButton">Start a New Game?</button>';
-            //ADD FUNCTION TO RESET POINTS TO ZERO AFTER SOMEONE HAS ONE
+            actionArea.innerHTML = '<button class="primaryButton" id="startNewGame">Start a New Game?</button>';
+
+            //
+            document.querySelector('#startNewGame').addEventListener('click', function(){
+                location.reload();
+            })
+            rollScore = '';
+            announce = '';
         }
         else {
             showCurrentScore();
@@ -242,7 +250,4 @@
         scoreOne.innerHTML = `${gameData.score[0]}`;
         scoreTwo.innerHTML = `${gameData.score[1]}`;
     }
-
-    //need connecting function between names entered for players and play screen
-
 }())
