@@ -4,13 +4,16 @@
    
     const goButton = document.querySelector('#goButton');
     const startGame = document.querySelector('#play');
-    const gameScreen = document.querySelector('#gameScreen');
+
     const scoreOne = document.querySelector('#score1');
     const scoreTwo = document.querySelector('#score2');
     const rollScore = document.querySelector('#rollScore');
+
+    //Variables to communicate with players throughout the game
     const announce = document.querySelector('#announce');
     const actionArea = document.querySelector('#actions');
 
+    //Game Sounds
     const gruntSound2 = new Audio('sounds/pig-sound.mp3');
     const startGameSound = new Audio('sounds/click.mp3');
     const gruntSound = new Audio('sounds/pig-grunt.mp3');
@@ -18,14 +21,18 @@
     const passSound = new Audio('sounds/cartoon-splat.mp3');
     const snakeEyesSound = new Audio('sounds/pig-oink.mp3');
 
+    // Components
     const headr = document.querySelector('header');
-    const screenOne = document.querySelector('#wrapper');
 
+    const screenOne = document.querySelector('#wrapper');
+    const gameScreen = document.querySelector('#gameScreen');
+    //Rule Modal Variables
     const rulesModal = document.querySelector('#rulesModal');
     const bgDark = document.querySelector('#bgDark');
     const rulesButton = document.querySelector('#rulesButton');
     const xMarkIcon = document.querySelector('#xMarkIcon');
 
+    //Game Data
     let gameData = {
         dice: ['d1.svg', 'd2.svg', 'd3.svg', 'd4.svg', 'd5.svg', 'd6.svg',],
         players: ['Player 1', 'Player 2'],
@@ -37,7 +44,7 @@
         gameEnd: 30
     }
 
-    // Go Button Loads Intro Page to ScreenOne
+    // "goButton" Loads Intro Page to ScreenOne
     goButton.addEventListener('click', function(){
         document.querySelector('#headerPig').className = 'rotate';
 
@@ -51,7 +58,7 @@
         setTimeout(loadNextPage, 1800);
     })
 
-    // Rules Panel 
+    // Rules Modal Open 
     rulesButton.addEventListener('click', function(){
         bgDark.className = 'showing';
         rulesModal.className = 'showing';
