@@ -113,7 +113,7 @@ button {
 }
 .pig1Wrapper, .pig2Wrapper {
     position: relative;
-    top: 100px;
+    top: 60px;
 }
 .pigSvg {
     height: 315px;
@@ -136,19 +136,34 @@ button {
     transform: rotate(7deg);
 }
 .enterName {
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-right: 50px;
 }
 #screenOne {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     gap: 20px;
     top: 0;
     left: 0;
 }
+#playerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 #gameScreen {
     top: 100px;
     left: 0;
+}
+.gameScreenHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.gameScreenHeader img {
+    height: 150px;
+    margin:  0 20px;
 }
 .player {
     display: flex;
@@ -171,19 +186,24 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin: 0 20px;
 }
 .pigImg {
-    width: 160px;
-    height: 160px;
-    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
     background-color: white;
-    margin: 0 20px;
-    border: solid white 8px;
-    
+    margin: 0 10px;
+    border: solid #0D0D0D 8px;
+    display: flex;
+    position: relative;
 }
 .pigImg img {
-    width: 160px;
+    position: absolute;
+    top: 20px;
+    display: block;
+    width: full;
+    height: 80%;
 }
 .player h3 {
     font-size: 26px;
@@ -205,7 +225,7 @@ input {
     box-sizing: border-box;
     border: solid #BDBDBD 3px;
     height: 60px;
-    width: 330px;
+    width: 200px;
     border-radius: 20px;
     font-size: 20px;
     padding: 0 10px;
@@ -244,24 +264,22 @@ input {
     bottom: 50px;
     right: 50px;
 }
-#quitLocation {
+.secondaryButton {
     position: absolute;
     top: 25px;
     right: 25px;
-}
-.secondaryButton {
-    font-size: 30px;
-    width: 130px;
-    height: 50px;
-    color: white;
-    background-color: #FF6958;
+    padding: 10px 20px;
+    border-radius: 30px;
     border: none;
-    transition: 0.3s;
+    color: #FF6958;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+    font-size: 25px;
+    transition: ease-in 0.3s;
 }
 .secondaryButton:hover {
-    color: #FF6958;
-    background-color: white;
-    box-shadow: 4px 4px #FF6958;
+    color: black;
 }
 .secondaryButton:active {
     color: #FADCD9;
@@ -271,7 +289,7 @@ input {
 #actions {
     height: 150px;
     position: relative;
-    top: 185px;
+    top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -295,7 +313,7 @@ input {
 }
 .gamePlayers {
     position: relative;
-    top: 300px;
+    top: 120px;
     display: flex;
     justify-content: space-between;
 }
@@ -313,26 +331,30 @@ input {
     text-align: center;
     margin: 0;
 }
+#centerContent {
+    display: flex;
+    flex-direction: column;
+}
 #rollScore {
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 20px;
     position: relative;
-    bottom: -50px;
+    bottom: 150px;
 }
 #announce {
     font-size: 30px;
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: -50px;
+    bottom: 150px;
 }
 .gameButtons {
     display: flex;
     gap: 25px;
     justify-content: center;
     position: relative;
-    bottom: -50px;
+    bottom: 100px;
 }
 .showing {
     display: initial;

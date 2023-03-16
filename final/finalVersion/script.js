@@ -11,6 +11,7 @@
     const announce = document.querySelector('#announce');
     const actionArea = document.querySelector('#actions');
 
+    const gruntSound2 = new Audio('sounds/pig-sound.mp3');
     const startGameSound = new Audio('sounds/click.mp3');
     const gruntSound = new Audio('sounds/pig-grunt.mp3');
     const rollSound = new Audio('sounds/rolling-dice.mp3');
@@ -40,13 +41,14 @@
     goButton.addEventListener('click', function(){
         document.querySelector('#headerPig').className = 'rotate';
 
+        gruntSound2.play();
         function loadNextPage() {
             screenOne.classList.remove('hidden');
             screenOne.className = 'showing';
 
             headr.className = 'hidden'; 
         }
-        setTimeout(loadNextPage, 1200);
+        setTimeout(loadNextPage, 1800);
     })
 
     // Rules Panel 
@@ -69,11 +71,12 @@
     
     startGame.addEventListener('click', function () {
         // NEED HELP - startGame Button not playing sound when pressed
-        startGameSound.play();
+        gruntSound.play();
         //changes from rules to game screen
         //add screenOne.classList.remove('');
         screenOne.className = 'hidden';
         gameScreen.className = 'showing';
+        document.querySelector('footer a').className = 'hidden';
 
         //randomly sets the game index
         gameData.index = Math.round(Math.random());
@@ -89,13 +92,6 @@
         //NEED TO ADD RULES TO RESET GAME HERE
         gameData = ''
     })
-    // function chooseAvatar() {
-    //     const pig3 = document.querySelector('#pig3');
-
-    //     pig3.addEventListener('click', function(){
-    //         document.querySelector('pigImg, img').src - 'images/pig1.png'
-    //     })
-    // }
 
     function playerName() {
         let p1Name = document.querySelector('#playerOne').value;
@@ -125,27 +121,25 @@
         // announces which player's turn it is
         console.log(`index: ${gameData.index}`);
         console.log(gameData.players[gameData.index])
-        announce.innerHTML = `Roll the dice for &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
-        rollScore.innerHTML = "Let's go!";
 
         playerName();
         //sets the pink outline to player img to indicate who's turn it is
         whoseTurn();
 
         document.querySelector('#roll').addEventListener('click', function () {
-                gruntSound.play();
-            rollTheDice();
+                gruntSound2.play();
+                setTimeout(rollTheDice, 500);
+
         })
 
         document.querySelector('#pass').addEventListener('click', function () {
-            passSound.play();
+            gruntSound.play();
 
             console.log(`current score when pass was clicked / 1: ${gameData.score[0]} / ${gameData.score[1]}`)
             //switches player turn
             gameData.index 
             ? (gameData.index = 0) 
             : (gameData.index = 1);
-            announce.innerHTML = `Roll the dice for &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
 
             //sets the pink outline to player img to indicate who's turn it is
             whoseTurn();
@@ -155,6 +149,7 @@
     function rollTheDice() {
         console.log(`current score before roll / 1: ${gameData.score[0]} / 2: ${gameData.score[1]}`);
         actionArea.innerHTML = '';
+        announce.innerHTML = '';
 
         //get random values for 1-6 for the turn score
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
@@ -190,29 +185,31 @@
                 ? (gameData.index = 0)
                 : (gameData.index = 1);
             // NEED HELP - is saying switching to wrong player
-            announce.innerHTML = `switching to &nbsp;<strong>${gameData.players[gameData.index ]}</strong>`;
-            setTimeout(setUpTurn, 2000);
+            announce.innerHTML = 'Passing turn';
+            setUpTurn();
         }
         //if either die is a 1
         else if (gameData.roll1 === 1 || gameData.roll2 === 1){
             console.log('one of the two dice is a 1');
-            rollScore.innerHTML = 'Sorry, one of your rolls was a 1!';
+            rollScore.innerHTML = `Sorry, one of your rolls was a 1!`;
+            
 
-            rollSound.pause();
-            passSound.play();
+            gruntSound.pause();
+            gruntSound2.play();
 
             //switches players
             gameData.index 
                 ? (gameData.index = 0)
                 : (gameData.index = 1);
-            announce.innerHTML = `switching to &nbsp;<strong>${gameData.players[gameData.index]}</strong>`;
-            setTimeout(setUpTurn, 2000);
+            announce.innerHTML = 'Passing turn';
+            setUpTurn();
         }
         //if niether die is a 1 
         else {
             console.log('the game proceeds');
             rollScore.innerHTML = `+${gameData.rollSum}`;
             gameData.score[gameData.index] += gameData.rollSum;
+            announce.innerHTML = 'Roll again?';
             checkWinningFunction(); 
         }
           
@@ -221,7 +218,8 @@
     function checkWinningFunction() {
         if (gameData.score[gameData.index] >= gameData.gameEnd) {
             showCurrentScore();
-            // rollScore = '&nbsp;';
+            rollScore = '';
+            announce = '';
 
             announce.innerHTML = `<strong>${[gameData.players[gameData.index]]}</strong>&nbsp; wins with &nbsp;<strong>${gameData.score[gameData.index]}&nbsp;points</strong>!`;
 
