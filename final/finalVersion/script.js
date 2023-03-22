@@ -93,27 +93,6 @@
         setUpTurn();
     })
 
-    //Game Buttons
-    //Roll Button
-    document.querySelector('#roll').addEventListener('click', function () {
-            gruntSound2.play();
-            setTimeout(rollTheDice, 500);
-
-    })
-    //Pass Button
-    document.querySelector('#pass').addEventListener('click', function () {
-        gruntSound.play();
-
-        console.log(`current score when pass was clicked / 1: ${gameData.score[0]} / ${gameData.score[1]}`)
-        //switches player turn
-        gameData.index 
-        ? (gameData.index = 0) 
-        : (gameData.index = 1);
-
-        //sets the pink outline to player img to indicate who's turn it is
-        whoseTurn();
-    })
-
     //Quit Button
     document.querySelector('#quit').addEventListener('click', function () {
         screenOne.className = 'showing';
@@ -135,7 +114,7 @@
             document.querySelector('#p2PrintName').innerHTML = p2Name;
         }
     }
-
+    
     //Prink border around player image who's turn it is
     function whoseTurn(){
         //sets the pink outline to player img to indicate who's turn it is
@@ -148,17 +127,35 @@
             document.querySelector('#p1').classList.remove('playerTurn');
         }
     }
+    
 
     //Sets up the turn
     function setUpTurn() {
         //Announces which player's turn it is
         console.log(`index: ${gameData.index}`);
         console.log(gameData.players[gameData.index])
-
         //Assings Player's name iputs if given
         playerName();
         //Sets a pink border to player img to indicate who's turn it is
         whoseTurn();
+        //Roll Button
+        document.querySelector('#roll').addEventListener('click', function () {
+        gruntSound2.play();
+        setTimeout(rollTheDice, 250);
+        })
+        //Pass Button
+        document.querySelector('#pass').addEventListener('click', function () {
+            gruntSound.play();
+
+            console.log(`current score when pass was clicked / 1: ${gameData.score[0]} / ${gameData.score[1]}`)
+            //switches player turn
+            gameData.index 
+            ? (gameData.index = 0) 
+            : (gameData.index = 1);
+
+            //sets the pink outline to player img to indicate who's turn it is
+            whoseTurn();
+        })
     }
 
     function rollTheDice() {
@@ -174,7 +171,7 @@
         function delaySound(){
             rollSound.play();
         }
-        setTimeout(delaySound, 300);
+        setTimeout(delaySound, 200);
 
         //Puts the dice images on the screen; the dice array index needs to be 1 less than roll1 and roll2
         actionArea.className = 'dice';
@@ -188,7 +185,6 @@
         if (gameData.rollSum === 2){
             console.log('snake eyes');
             rollScore.innerHTML = 'Oh snap! Snake eyes!';
-            gameData.score[gameData.index] = 0;
 
             gruntSound.pause();
             rollSound.pause();
@@ -198,7 +194,8 @@
             gameData.index 
                 ? (gameData.index = 0)
                 : (gameData.index = 1);
-            announce.innerHTML = 'Passing turn';
+            announce.innerHTML = 'Passing turn'; 
+            gameData.score[gameData.index] = 0;
             setUpTurn();
         }
         //If either die is a 1
